@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+  body{
+    background: url('1123167.png');
+  }
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #7e40f6;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(
+      to right,
+      rgba(126, 64, 246, 1),
+      rgba(80, 139, 252, 1)
+    );
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(
+      to right,
+      rgba(126, 64, 246, 1),
+      rgba(80, 139, 252, 1)
+    );
+  }
+  
+  .mask-custom {
+    background: rgba(24, 24, 16, 0.2);
+    border-radius: 2em;
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+  }
+
+.themes-css{
+  width: 655px;
+  margin: 0px auto;
+}
+
+
+.themes{
+  font-size: 30px;
+  font-family: 'Lobster', cursive;
+  display: block;
+  width: 655px;
+  height: 70px;
+  background: url('../image/ramka.jpg') 0 0 no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin: -20px -5px;
+}
+
+.mb-4{
+  max-width: 665px;
+  margin: 10px auto;
+}
+input::placeholder{
+  text-align: center;
+}
+
+::placeholder{
+  color: black;
+}
+
+.fonarea{
+  display: block;
+  background: url('../image/fon.jpg') 0 0 no-repeat;
+  width: 655px;
+  height: 950px;
+  resize: none;
+  padding: 80px 75px;
+  font-size: 30px;
+  line-height: 30px;
+  font-family: 'Lobster', cursive;
+ }
+
+ .btn-send{
+  font-size: 30px;
+  font-family: 'Lobster', cursive;
+  display: block;
+  width: 655px;
+  height: 70px;
+  background: url('../image/bottom-ramka.jpg') 0 0 no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin: 0px -5px;
+ }

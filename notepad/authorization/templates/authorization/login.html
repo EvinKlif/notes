@@ -1,0 +1,47 @@
+<!doctype html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'authorization/css/log_end_reg.css' %}">
+    <link rel="stylesheet" href="{% static 'authorization/css/styleapp.css' %}">
+    <script type="text/javascript" src="{% static 'authorization/js/three.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'authorization/js/vanta.cells.min' %}"></script>
+
+
+</head>
+<body>
+<div class="intro" id="intro">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="box">
+            <div class="form">
+                <h2>Вход</h2>
+                <div class="inputBox">
+                    {{ form.username }}
+                    <span>Name</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    {{ form.password }}
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div><h3>{{ form.non_field_errors }} </h3></div>
+                <div class="links">
+                    <a href="{% url 'register' %}">Регистрация</a>
+                </div>
+                <input type="submit" name="sum" value="Login">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script src="{% static 'authorization/js/three.r119.min.js' %}"></script>
+<script src="{% static 'authorization/js/vanta.cells.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'authorization/js/app.js' %}"></script>
+</body>
+</html>
