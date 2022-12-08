@@ -14,6 +14,7 @@ class LoginUserForm(AuthenticationForm):
     password = forms.CharField(widget=forms.TextInput(attrs={
         "class": "form-control",
         "type": "password",
+
     }))
 
 
@@ -29,7 +30,6 @@ class RegisterUserForm(UserCreationForm):
     password1 = forms.CharField(label='form-label', widget=forms.TextInput(attrs={
         "class": "form-control",
         "type": "password",
-
 
      }))
 
