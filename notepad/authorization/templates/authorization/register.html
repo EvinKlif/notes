@@ -3,7 +3,7 @@
 {% load static %}
 
 
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'authorization/css/styleapp.css' %}">
@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<div class="intro" id="intro">
+<div class="intro hero">
     <form class="container py-5 h-100" action="" method="POST">
         {% csrf_token %}
         <div class="box">

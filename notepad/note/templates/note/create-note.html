@@ -7,75 +7,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'note/css/create-css.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="{% static 'note/css/style_app.css' %}">
-    <script type="text/javascript" src="{% static 'note/js/app.js' %}"></script>
-    <script type="text/javascript" src="{% static 'note/js/three.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'note/js/vanta.cells.min' %}"></script>
+    <!-- <link href="/cs/test.css" rel="stylesheet"> -->
+    <link href="{% static 'note/css/style.css' %}" rel="stylesheet">
+    <!-- <link href="/cs/w.css" rel="stylesheet"> -->
 
 
-    <title>Document</title>
 </head>
 <body>
-<div class="intro" id="intro">
-
-    <header class="p-3 bg-dark text-white">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                </a>
-
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <button type="button" onClick="location.href='{% url 'notes' %}'" class="btn btn-outline-light me-2">Мои Записи
-                    </button>
-
-                </ul>
-
-                <div class="text-end">
-                    <button type="button" onClick="location.href='{% url 'logout' %}'" class="btn btn-outline-light me-2">Logout</button>
-                </div>
+<section id="hero">
+    <form  autocomplete="off" method="post">
+        {% csrf_token %}
+    <nav>
+        <div class="contain-menu">
+            <img src="{% static 'note/image/hero-logo.png' %}">
+            <h1>NotePad</h1>
+            <div class="menu">
+                <!-- <div class="input-themes"> -->
+                {% if post.title %}
+                <input name="title" placeholder="Название темы" value="{{ post.title }}">
+                {% else %}
+                <input name="title" placeholder="Название темы" >
+                {% endif %}
+                <a><button class="btn-send " type="submit">Сохранить</button></a>
+                <a href="{% url 'notes' %}">Мои записи</a>
+            </div>
+            <div class="menu">
+                <a href="{% url 'logout' %}"> {{ user.username }} | Loguot</a>
             </div>
         </div>
-    </header>
-    <div>
-
-
-        <form class="container py-1 h-100" autocomplete="off" method="post">
-            {% csrf_token %}
-            <div class="themes-css">
-                <label class="form-label"></label>
-                {% if post.title %}
-                <input type="text" name="title" class="themes input_style" value="{{ post.title }}">
-                {% else %}
-                <input type="text" name="title" class="themes input_style" placeholder="Тема">
-                {% endif %}
-            </div>
-            <div class="mb-4">
-                <label class="form-label"></label>
-                {% if post.content %}
-                <textarea class="fonarea" name="content">{{ post.content }}</textarea>
-                {% else %}
-                <textarea class="fonarea" name="content" value=" " ></textarea>
-                {% endif %}
-            </div>
-            <div class="themes-css">
-                <button class="btn-send " type="submit">Сохранить</button>
-            </div>
-        </form>
-
-    </div>
-    <script src="{% static 'note/js/three.r119.min.js' %}"></script>
-    <script src="{% static 'note/js/vanta.cells.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'note/js/app.js' %}"></script>
-
+    </nav>
+    <div class="container">
+        <div>
+            {% if post.content %}
+            <textarea name="content" class="fonarea">{{ post.content }}</textarea>
+            {% else %}
+            <textarea name="content" class="fonarea"></textarea>
+            {% endif %}
+        </div>
+    </form>
+</section>
 </body>
 </html>

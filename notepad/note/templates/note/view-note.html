@@ -5,79 +5,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
-    <link rel="stylesheet" href="{% static 'note/css/note.css' %}">
-    <link rel="stylesheet" href="{% static 'note/css/create-css.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'note/css/style_app.css' %}">
-    <script type="text/javascript" src="{% static 'authorization/js/app.js' %}"></script>
-    <script type="text/javascript" src="{% static 'authorization/js/three.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'authorization/js/vanta.cells.min' %}"></script>
+    <link href="{% static 'note/css/style.css' %}" rel="stylesheet">
+
 </head>
 <body>
-<div class="intro" id="intro">
-    <header class="p-3 bg-dark text-white">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                </a>
-
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <button type="button" onClick="location.href='{% url 'add_note' %}'"
-                            class="btn btn-outline-light me-2">
-                        Создать
-                    </button>
-                </ul>
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <button type="sumbit" onClick="location.href='{% url 'update' note_slug %}'"
-                            class="btn btn btn-outline-light  me-2">Изменить
-                    </button>
-                </ul>
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <form method="post" action="{% url 'delete' note_slug %}">
-                        {% csrf_token %}
-                        <button type="sumbit" class="btn btn-danger btn-outline-light  me-2">удалить</button>
-                    </form>
-                </ul>
-                <div class="text-end">
-                    <button type="button" onClick="location.href='{% url 'logout' %}'"
-                            class="btn btn-outline-light me-2">
-                        Logout
-                    </button>
-                </div>
+<section id="hero">
+    <form action="{% url 'delete' note_slug %}" autocomplete="off" method="post">
+    {% csrf_token %}
+    <nav>
+        <div class="contain-menu">
+            <img src="{% static 'note/image/hero-logo.png' %}">
+            <h1>NotePad</h1>
+            <div class="menu">
+                <!-- <div class="input-themes"> -->
+                <input name="title" placeholder="Название темы" value="{{ post.title }}">
+                <!-- </div> -->
+                <a href="{% url 'add_note' %}">Создать</a>
+                <a href="{% url 'update' note_slug %}">Изменить</a>
+                <a><button class="btn-send " type="submit">Удалить</button></a>
+            </div>
+            <div class="menu">
+                <a href="{% url 'logout' %}"> {{ user.username }} | Loguot</a>
             </div>
         </div>
-    </header>
-    <div class="themes-css">
-        <label class="form-label"></label>
-        <input type="text" name="title" class="themes input_style" placeholder="{{ post.title }}">
-    </div>
-    <div class="mb-4">
-        <label class="form-label"></label>
-        <textarea class="fonarea" name="content">{{ post.content }}</textarea>
-    </div>
-    <nav id="sidebarMenu" class="collapse d-lg-block  sidebar collapse bg-black">
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple mx-0 mt-3" aria-current="true">
-            <i class="fas fa-tachometer-alt fa-fw me-3"></i
-            ><span><h1>Темы</h1></span>
-        </a>
-        <div>
-            {% for p in list %}
-            <a
-                    href="{{ p.get_absolute_url }}"
-                    class="list-group-item list-group-item-action py-2 ripple"
-            ><i class="fas fa-users fa-fw me-3"></i><span>{{p.title}}</span>
-            </a>
-            {% endfor %}
-        </div>
     </nav>
-</div>
-        <script src="{% static 'authorization/js/three.r119.min.js' %}"></script>
-        <script src="{% static 'authorization/js/vanta.cells.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'authorization/js/app.js' %}"></script>
+    <div class="container">
+        <div>
+            <textarea name="content" class="fonarea">{{ post.content }}</textarea>
+        </div>
+        {% for p in list %}
+        <div class="link">
+            <div class="text"><a class="href-block" href="{{ p.get_absolute_url }}">{{p.title}} </a></div>
+        </div>
+        {% endfor %}
+
+</section>
 </body>
 </html>

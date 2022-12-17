@@ -463,3 +463,10 @@ section {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../image/hero-bg.png") ;
+  position: relative;
+}

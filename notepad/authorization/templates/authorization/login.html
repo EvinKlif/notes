@@ -7,13 +7,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'authorization/css/log_end_reg.css' %}">
     <link rel="stylesheet" href="{% static 'authorization/css/styleapp.css' %}">
-    <script type="text/javascript" src="{% static 'authorization/js/three.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'authorization/js/vanta.cells.min' %}"></script>
-
-
 </head>
 <body>
-<div class="intro" id="intro">
+<div class="intro hero">
     <form action="" method="POST">
         {% csrf_token %}
         <div class="box">
@@ -25,7 +21,7 @@
                     <i></i>
                 </div>
                 <div class="inputBox">
-                    {{ form.password  }}
+                    {{ form.password }}
                     <span>Password</span>
                     <i></i>
                 </div>
@@ -36,12 +32,8 @@
                 <input type="submit" name="sum" value="Login">
             </div>
         </div>
-
     </form>
 </div>
 
-<script src="{% static 'authorization/js/three.r119.min.js' %}"></script>
-<script src="{% static 'authorization/js/vanta.cells.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'authorization/js/app.js' %}"></script>
 </body>
 </html>
