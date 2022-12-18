@@ -146,7 +146,7 @@ body
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #45f3ff, #45f3ff, #ff0202, #ff0202 );
+    background: linear-gradient(90deg, #45f3ff, #45f3ff, #ff0202, #ff020200 );
     animation: animateText 2s linear infinite;
 }
 .inputBox input:valid ~ i::before,

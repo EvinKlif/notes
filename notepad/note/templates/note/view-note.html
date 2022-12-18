@@ -18,11 +18,12 @@
             <h1>NotePad</h1>
             <div class="menu">
                 <!-- <div class="input-themes"> -->
-                <input name="title" placeholder="Название темы" value="{{ post.title }}">
+<!--                <input name="title" placeholder="Название темы" value="{{ post.title }}">-->
                 <!-- </div> -->
-                <a href="{% url 'add_note' %}">Создать</a>
-                <a href="{% url 'update' note_slug %}">Изменить</a>
-                <a><button class="btn-send " type="submit">Удалить</button></a>
+                <a id="title-a">{{ post.title }}</a>
+                <a id="green" href="{% url 'add_note' %}">Создать</a>
+                <a id="yellow" href="{% url 'update' note_slug %}">Изменить</a>
+                <a id="red"><button class="btn-send " type="submit">Удалить</button></a>
             </div>
             <div class="menu">
                 <a href="{% url 'logout' %}"> {{ user.username }} | Loguot</a>

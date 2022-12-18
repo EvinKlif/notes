@@ -318,10 +318,22 @@ img
   border: rgba(192, 191, 191, 0);
   font-size: 18px;
 }
-
-.menu a:hover 
+.menu  a:hover
 {
-  background-color: #0728bb;
+    background-color: #0728bb;
+}
+
+.menu  a:nth-child(2):hover
+{
+    background-color: green;
+}
+.menu  a:nth-child(3):hover
+{
+    background-color: #c7c105;
+}
+.menu  a:nth-child(4):hover
+{
+    background-color: red;
 }
 
 .fonarea{
@@ -358,5 +370,15 @@ img
 .href-block
 {
     display: block;
-
 }
+
+#title-a
+{
+  background-color: #0728bb00;
+  border-radius: 5px;
+  border: 3px solid #0728bb;
+  color: #04ff46;
+}
+
+
+
