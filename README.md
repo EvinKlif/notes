@@ -1,17 +1,17 @@
-Clone the repository:
-    git clone https://github.com/EvinKlif/notes.git
-Create and activate a virtual environment
+1. Clone the repository:
+     git clone https://github.com/EvinKlif/notes.git
+2. Create and activate a virtual environment
 
-Install dependencies from file requirements.txt:
+   Install dependencies from file requirements.txt:
 
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
-Go to folder:
+3.Go to folder:
+  cd notepad
 
-cd notepad
-Create application migrations:
+4.Create application migrations:
    python manage.py makemigrations
    python manage.py migrate
-Run the app:
+5. Run the app:
    python manage.py runserver
 The application will be available at: http://127.0.0.1:8000/
