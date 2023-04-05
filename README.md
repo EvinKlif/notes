@@ -1,17 +1,30 @@
+# Notebook
+
 1. Clone the repository:
-     git clone https://github.com/EvinKlif/notes.git
+```bash
+git clone https://github.com/EvinKlif/notes.git
+```
 2. Create and activate a virtual environment
 
-   Install dependencies from file requirements.txt:
+3. Install dependencies from file ***requirements.txt***:
+```bash
+pip install -r requirements.txt
+```
 
-   pip install -r requirements.txt
+4. Go to folder:
+```bash
+cd notepad
+```
 
-3.Go to folder:
-  cd notepad
+5. Create application migrations:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-4.Create application migrations:
-   python manage.py makemigrations
-   python manage.py migrate
-5. Run the app:
-   python manage.py runserver
-The application will be available at: http://127.0.0.1:8000/
+6. Run the app:
+```bash
+python manage.py runserver
+```
+
+7. The application will be available at: http://127.0.0.1:8000/
